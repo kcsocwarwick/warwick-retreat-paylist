@@ -2,11 +2,12 @@ import useSWR from "swr";
 import ClipLoader from "react-spinners/ClipLoader";
 import { Checkbox } from "pretty-checkbox-react";
 import { React, useState, useRef, useEffect } from "react";
-import useLocalStorage from "../hooks/useLocalStorage";
+import useLocalStorage from "../../hooks/useLocalStorage";
 import Modal from "react-modal";
 import Collected from "./Collected";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const fetcher = (...args) =>
+  fetch(...args, { credentials: "include" }).then((res) => res.json());
 
 const Table = () => {
   const [list, setList] = useLocalStorage("list", []);
@@ -23,6 +24,7 @@ const Table = () => {
 
   if (error) return <div>failed to load</div>;
   if (!data) return <ClipLoader />;
+  if (data.error) return <div>There was an error</div>;
 
   const handleChange = (type, person, state) => {
     console.log(type, person, state);
