@@ -6,6 +6,7 @@ const axios = require("axios");
 const URL = process.env.URL;
 
 export default async function handler(req, res) {
+  console.log(URL);
   res.setHeader("Content-Type", "application/json");
   res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
   res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
