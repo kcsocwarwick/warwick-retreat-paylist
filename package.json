@@ -8,9 +8,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@storyofams/next-password-protect": "^1.5.12",
+    "axios": "^0.24.0",
+    "csvtojson": "^2.0.10",
     "next": "12.0.3",
+    "pretty-checkbox": "^3.0.3",
+    "pretty-checkbox-react": "^3.2.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-modal": "^3.14.3",
+    "react-spinners": "^0.11.0",
+    "swr": "^1.0.1"
   },
   "devDependencies": {
     "eslint": "7.32.0",
