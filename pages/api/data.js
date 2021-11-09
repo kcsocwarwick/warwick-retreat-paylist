@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 const csv = require("csvtojson");
 const axios = require("axios");
 
-const URL = process.env.URL;
+const URL = process.env.SHEETS_URL;
 
 export default async function handler(req, res) {
   res.setHeader("Content-Type", "application/json");
