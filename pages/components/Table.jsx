@@ -35,6 +35,22 @@ const Table = () => {
     }
   };
 
+  const modalStyle = {
+    overlay: {
+      display: "flex",
+      justifyContent: "center",
+      minHeight: "100vh",
+      position: "fixed",
+      alignItems: "center"
+    },
+    content: {
+      justifyContent: "center",
+      position: "fixed",
+      alignItems: "center",
+      textAlign: "center"
+    }
+  };
+
   return (
     <div>
       <Modal
@@ -43,8 +59,9 @@ const Table = () => {
         onRequestClose={() => {
           setModal(false);
         }}
+        style={modalStyle}
       >
-        <h2>Modal</h2>
+        <h2>Contact Details</h2>
         <p>{modalData}</p>
         <button onClick={() => setModal(false)}>close</button>
       </Modal>
